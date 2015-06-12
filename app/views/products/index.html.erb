@@ -1,3 +1,5 @@
+<%# link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %>
+<%= current_order.inspect %>
 <% @products.each do |product| %>
   <%= form_for @order_item, remote: true do |f| %>
 	  <%= number_to_currency product.price %>
