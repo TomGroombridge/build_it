@@ -1,3 +1,8 @@
 <% @products.each do |product| %>
-	<%= product.name %>
+  <%= form_for @order_item, remote: true do |f| %>
+	  <%= number_to_currency product.price %>
+	  <%= f.number_field :quantity, value: 1, min: 1 %>
+	  <%= f.text_field :product_id, value: product.id %>
+	  <%= f.submit "Add to Cart" %>
+  <% end %>
 <% end %>
