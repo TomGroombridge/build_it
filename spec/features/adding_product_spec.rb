@@ -9,7 +9,6 @@ describe 'adding a product' do
       fill_in 'stock', with: '4'
       attach_file 'Image', Rails.root.join('spec/images/plane.jpg')
       click_button 'Create'
-
       expect(current_path).to eq '/products'
       expect(current_path).to have_content 'Suede Shoes, Blue'
       # expect(page).to have_css 'img.christagram-upload'
