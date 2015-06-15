@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612134904) do
+ActiveRecord::Schema.define(version: 20150615110159) do
 
   create_table "order_items", force: true do |t|
     t.integer  "product_id"
@@ -21,12 +21,14 @@ ActiveRecord::Schema.define(version: 20150612134904) do
     t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "unit_price"
   end
 
   create_table "orders", force: true do |t|
     t.decimal  "total"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "subtotal"
   end
 
   create_table "products", force: true do |t|

@@ -1,5 +1,5 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
 	raise error
 <% else %>
-  $(".order-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+  $(".order-text").html("<%= escape_javascript(render 'layouts/order_total') %>")
 <% end %>
