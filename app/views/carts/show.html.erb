@@ -1,7 +1,3 @@
-<% if @order_items.size == 0 %>
-    <h1>Nothing in Cart</h1>
-<% else %>
-  <% @order_items.each do |order_item| %>
-    <h4><%= order_item.product.name %></h4>
-  <% end %>
-<% end %>
+<div class="cart">
+  <%= render 'total_items' %>
+</div>
