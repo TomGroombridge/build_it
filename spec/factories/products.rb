@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :product do
-    name "MyString"
-catergory "MyString"
-price 1.5
-stock 1
+    name "Red Shoes"
+		category "Shoes"
+		price 10.50
+		stock 10
   end
 
 end

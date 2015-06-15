@@ -2,6 +2,7 @@
 <%= current_order.inspect %>
 <% @products.each do |product| %>
   <%= form_for @order_item, remote: true do |f| %>
+  	<%= product.name %>
 	  <%= number_to_currency product.price %>
 	  <%= f.number_field :quantity, value: 1, min: 1 %>
 	  <%= f.text_field :product_id, value: product.id %>
