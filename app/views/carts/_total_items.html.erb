@@ -1,15 +1,42 @@
 <% if @order_items.size == 0 %>
   <h1>Nothing in Cart</h1>
 <% else %>
-  <% @order_items.each do |order_item| %>
-    <h4><%= order_item.product.name %></h4>
-    <%= form_for order_item, remote: true do |f| %>
-      <h1>Unit Price: <%= number_to_currency order_item.unit_price %></h1>
-      <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1, max: "#{order_item.product.stock}" %>
-      <%= f.hidden_field :product_id, value: order_item.product.id %>
-      <%= f.submit "Update Quantity"%>
-      <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to remove this item" }, method: :delete, remote: true } %>
-      <h1>Total Price: <%= number_to_currency order_item.total_price %></h1>
-    <% end %>
-  <% end %>
+  <div class="cart-items">
+    <div class="header" style="display:block">
+      <h1 class="title">Here's What You're Getting!</h1>
+      <h1 class="continue-shopping" >Want some shirts? <span style="font-weight:bold">Continue Shopping</span></h1>
+    </div>
+    <div class="ui divider"></div>
+    <h3 class="item-count">You have <%= current_order.total_items %> items in your order.</h3>
+    <table class="ui very basic table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @order_items.each do |order_item| %>
+        <tr>
+          <td><%= order_item.product.name %></td>
+          <td><%= order_item.product.category %></td>
+          <td><%= number_to_currency order_item.unit_price %></td>
+          <%= form_for order_item, remote: true do |f| %>
+            <td><%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1, max: "#{order_item.product.stock}" %><%= f.submit "Update Quantity", :style => "float:right"%></td>
+            <%= f.hidden_field :product_id, value: order_item.product.id %>
+          <% end %>
+          <td>= <%= number_to_currency order_item.total_price %></td>
+          <td><%= link_to "Remove", order_item, { data: { confirm: "Are you sure you wish to remove this item" }, :class => "ui black button", method: :delete, remote: true } %></td>
+
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
 <% end %>
+

@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require semantic-ui
 //= require isotope-docs.min.js
+//= require semantic-ui
 //= require_tree .
 
 $(window).load(function(){

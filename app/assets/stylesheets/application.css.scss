@@ -10,3 +10,28 @@
   margin-left: 0rem;
   margin-right: 0rem;
 }
+
+.cart-items{
+	width: 80%;
+  margin: auto;
+  top: 50px;
+  position: relative;
+
+  .item-count{
+  	margin-bottom: 37px;
+  }
+
+  .header{
+  	display: block;
+
+  	.title{
+  		display: inline-block;
+  	}
+  	.continue-shopping{
+  		display: inline-block;
+		  float: right;
+		  font-weight: initial;
+		  font-family: -webkit-body;
+  	}
+  }
+}

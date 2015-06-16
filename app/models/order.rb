@@ -6,6 +6,11 @@ class Order < ActiveRecord::Base
     total = order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
+  def total_items
+  	quantity = self.order_items.map{|item| item.quantity}
+  	quantity.inject{|sum,x| sum + x }
+  end
+
 private
 
   def update_subtotal
