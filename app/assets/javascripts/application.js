@@ -14,15 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require semantic-ui
+//= require isotope-docs.min.js
 //= require_tree .
 
-$(document).ready(function() {
-	$('.special.cards .image').dimmer({
-	  on: 'hover'
-	});
-});
-
-$( document ).ready( function() {
+$(window).load(function(){
   // init Isotope
   var $container = $('.isotope').isotope({
     itemSelector: '.element-item',
@@ -75,5 +70,15 @@ $( document ).ready( function() {
       $( this ).addClass('is-checked');
     });
   });
+
+
+
+
+
+
+
+  $('.special.cards .image').dimmer({
+	  on: 'hover'
+	});
 
 });

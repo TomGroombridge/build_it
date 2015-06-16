@@ -1,37 +1,37 @@
- <div id="filters" class="ui seven column stackable grid" style="background: #35464f">
-      <div class="column">
+ <div id="filters" class="ui seven column stackable grid category-buttons button-group" style="background: #35464f">
+      <div class="column buttons">
         <button class="ui inverted red button" data-filter="*">
           <span class="web">All</span>
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted yellow button " data-filter=".shoes">
+      <div class="column buttons">
+        <button class="ui inverted yellow button " data-filter=".womens_footwear">
           <span class="web">women’s footwear</span>
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted blue button text" data-filter=".socks">
+      <div class="column buttons">
+        <button class="ui inverted blue button text" data-filter=".mens_footwear">
           <span class="web">men’s footwear</span>
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted orange button " data-filter=".health">
+      <div class="column buttons">
+        <button class="ui inverted orange button " data-filter=".womens_casualwear">
           <span class="web">women’s casual</span>
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted green button " data-filter=".music">
+      <div class="column buttons">
+        <button class="ui inverted green button " data-filter=".mens_casualwear">
           <span class="web">men’s casual</span>
 
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted purple button " data-filter=".other">
+      <div class="column buttons">
+        <button class="ui inverted purple button " data-filter=".womens_formalwear">
           <span class="web">women’s formal</span>
         </button>
       </div>
-      <div class="column">
-        <button class="ui inverted purple button " data-filter=".other">
+      <div class="column buttons">
+        <button class="ui inverted purple button " data-filter=".mens_formalwear">
           <span class="web">man’s formalwear</span>
         </button>
       </div>
@@ -51,7 +51,7 @@
 		        </div>
 		      </div>
 		    </div>
-		    <%= image_tag "shoe.jpeg"%>
+		    <%= image_tag(product.avatar)%>
 		  </div>
 		  <div class="content">
 		    <a class="header"><%= product.name %></a>

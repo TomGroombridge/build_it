@@ -3,7 +3,9 @@
 	<%= f.text_field :name %>
 	<br>
 	<%= f.label :category %>
-	<%= f.text_field :category %>
+	<%= f.select :category, options_for_select([["Men's Footwear", "mens_footwear"], ["Women's Footwear","womens_footwear"],["Men's Casualwear", "mens_casualwear"],["Women's Casualwear", "womens_casualwear"],["Men's Formalwear", "mens_formalwear"],["Women's Formalwear", "womens_formalwear"]])%>
+	<br>
+	<%= f.file_field :avatar %>
 	<br>
 	<%= f.label :price %>
 	<%= f.text_field :price %>
