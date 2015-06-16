@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :order do
-    total "9.99"
+    subtotal 0.00
   end
 
 end

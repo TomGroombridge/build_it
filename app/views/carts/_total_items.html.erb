@@ -5,7 +5,7 @@
     <h4><%= order_item.product.name %></h4>
     <%= form_for order_item, remote: true do |f| %>
       <h1>Unit Price: <%= number_to_currency order_item.unit_price %></h1>
-      <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+      <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1, max: "#{order_item.product.stock}" %>
       <%= f.hidden_field :product_id, value: order_item.product.id %>
       <%= f.submit "Update Quantity"%>
       <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to remove this item" }, method: :delete, remote: true } %>
