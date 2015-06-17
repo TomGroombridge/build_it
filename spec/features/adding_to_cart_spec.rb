@@ -14,10 +14,9 @@ describe 'adding a product' do
 
   it 'should be able to add the product to cart', :js => true do
   	visit '/products'
-    # click_button("product-1")
-    # page.find("#product-1").click
-    # visit '/cart'
-    expect(page).to have_content 'Red Shoes'
+    click_button("product-1")
+    click_link("helllo")
+    expect(page).to have_content 'new shoes pink'
 	end
 
 end
