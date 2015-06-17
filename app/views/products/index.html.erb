@@ -46,7 +46,12 @@
   						<%= form_for @order_item, remote: true do |f| %>
 			          <%= f.hidden_field :quantity, value: 1, min: 1 %>
 							  <%= f.hidden_field :product_id, value: product.id %>
-		            <%= f.submit "Add to Cart", :class => "ui inverted button" %>
+                <% if product.stock == 0 %>
+                  <p>no stock!</p>
+                <% else %>
+                  <p class="testing321"><%= product.stock %> in stock</p>
+		              <%= f.submit "Add to Cart", :class => "ui inverted button" %>
+                <% end %>
 							<% end %>
 		        </div>
 		      </div>
@@ -61,7 +66,7 @@
 		  </div>
 		  <div class="extra content">
 	      <a>
-	        <i class="users icon"></i>
+	        <i class="users icon stock"></i>
 	        <%= product.stock %> in stock
 	      </a>
 	    </div>

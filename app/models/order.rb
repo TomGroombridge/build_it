@@ -1,9 +1,13 @@
 class Order < ActiveRecord::Base
 	has_many :order_items
+	belongs_to :voucher
 	before_save :update_subtotal
 
   def subtotal
     total = order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
+    if self.voucher_id != nil
+    	total - self.voucher.price
+    end
   end
 
   def total_items

@@ -5,6 +5,8 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.new(order_item_params)
     @order.save
     session[:order_id] = @order.id
+    # @stock = @order_item.product.stock
+    # @order_item.product.update_attributes(:stock => @stock - 1)
   end
 
   def update
@@ -19,6 +21,8 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    # @stock = @order_item.product.stock
+    # @order_item.product.update_attributes(:stock => @stock + 1)
   end
 
 

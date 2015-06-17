@@ -5,6 +5,11 @@
     <div class="header" style="display:block">
       <h1 class="title">Here's What You're Getting!</h1>
       <h1 class="continue-shopping" >Want some shirts? <span style="font-weight:bold">Continue Shopping</span></h1>
+      <%= form_for @order, remote: true do |f| %>
+        <%=  @vouchers.inspect %>
+        <%= f.select :voucher_id, options_for_select(@vouchers.map{ |c| [(number_to_currency c.price), c.id] }) %>
+        <%= f.submit %>
+      <% end %>
     </div>
     <div class="ui divider"></div>
     <h3 class="item-count">You have <%= current_order.total_items %> items in your order.</h3>
