@@ -4,7 +4,7 @@ describe 'adding a product' do
   it 'should be able to add a new product' do
     visit 'products/new'
     fill_in 'Name', with: 'Suede Shoes, Blue'
-    fill_in 'Category', with: 'Women’s Footwear'
+    select("Men's Footwear", :from => 'Category')
     fill_in 'Price', with: '42.00'
     fill_in 'Stock', with: '4'
     click_button 'Create Product'

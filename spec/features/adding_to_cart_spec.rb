@@ -13,9 +13,10 @@ describe 'adding a product' do
 
 
 
-  it 'should be able to add the product to cart' do
+  it 'should be able to add the product to cart', :js => true do
   	visit '/products'
-  	click_button 'courseSubmit'
+    click_link('Add to Cart')
+
 	end
 
 end
