@@ -15,6 +15,7 @@ class Order < ActiveRecord::Base
 	    total - self.voucher.price
 		else
 			self.update_attributes(voucher_id: nil)
+			total
 		end
   end
 
