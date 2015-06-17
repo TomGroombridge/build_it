@@ -76,7 +76,8 @@
           <% if product.stock == 0 %>
             <p>no stock!</p>
           <% else %>
-            <a><%= f.submit "Add to Cart", :class => "ui button", :id => "#{product.id}-product" %></a>
+            <%= product.id %>
+            <a><%= f.submit "Add to Cart", :class => "ui button", :id => "product-#{product.id}" %></a>
           <% end %>
         <% end %>
 	    </div>
