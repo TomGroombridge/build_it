@@ -7,6 +7,8 @@ class Order < ActiveRecord::Base
     total = order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
     if self.voucher_id != nil
     	total - self.voucher.price
+    else
+    	total
     end
   end
 
