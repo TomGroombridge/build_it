@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'adding a product' do
 
-  before do
+  before(:all) do
     create(:product)
   end
 
@@ -15,8 +15,10 @@ describe 'adding a product' do
   it 'should be able to add the product to cart', :js => true do
   	visit '/products'
     click_button("product-1")
+    # click_on("Add to Cart")
+    # page.find('#product-1').trigger('click')
     click_link("helllo")
-    expect(page).to have_content 'new shoes pink'
+    expect(page).to have_content 'Red Shoes'
 	end
 
 end

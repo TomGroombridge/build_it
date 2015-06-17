@@ -3,7 +3,7 @@ FactoryGirl.define do
     name "Red Shoes"
 		category "Shoes"
 		price 10.50
-		stock 10
+		stock 100
   end
 
 end
