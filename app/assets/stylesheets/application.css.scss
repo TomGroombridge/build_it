@@ -35,3 +35,14 @@
   	}
   }
 }
+
+.extra.content{
+  display: block;
+  .left-item{
+    display: inline-block;
+  }
+  .new_order_item{
+    display: inline-block;
+    float: right;
+  }
+}

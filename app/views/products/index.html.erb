@@ -65,10 +65,20 @@
 		    </div>
 		  </div>
 		  <div class="extra content">
-	      <a>
+	      <a class="left-item">
 	        <i class="users icon stock"></i>
 	        <%= product.stock %> in stock
+          hello world
 	      </a>
+        <%= form_for @order_item, remote: true do |f| %>
+          <%= f.hidden_field :quantity, value: 1, min: 1 %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <% if product.stock == 0 %>
+            <p>no stock!</p>
+          <% else %>
+            <a><%= f.submit "Add to Cart", :class => "ui button", :id => "#{product.id}-product" %></a>
+          <% end %>
+        <% end %>
 	    </div>
 		</div>
 	<% end %>
