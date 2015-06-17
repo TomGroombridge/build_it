@@ -5,11 +5,17 @@ class Order < ActiveRecord::Base
 
   def subtotal
     total = order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
-    if self.voucher_id != nil
-    	total - self.voucher.price
-    else
+  end
+
+  def total
+  	total = order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
+    if self.voucher.nil?
     	total
-    end
+    elsif self.subtotal >= self.voucher.price_of_activation
+	    total - self.voucher.price
+		else
+			self.update_attributes(voucher_id: nil)
+		end
   end
 
   def total_items

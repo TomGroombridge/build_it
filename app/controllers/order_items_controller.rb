@@ -17,7 +17,7 @@ class OrderItemsController < ApplicationController
     vouchers = Voucher.all
     @vouchers = []
     vouchers.map  do |v|
-      if v.price_of_activation <= @order.subtotal
+      if v.price_of_activation <= @order.total
         @vouchers << v
       end
     end
