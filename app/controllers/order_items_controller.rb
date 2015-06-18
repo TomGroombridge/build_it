@@ -33,6 +33,18 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    vouchers = Voucher.all
+    @vouchers = []
+    vouchers.each do |v|
+      @order_items.each do |item|
+        if item.product.category == v.category && v.price_of_activation <= @order.subtotal
+          @vouchers << v
+        elsif v.category.nil? && v.price_of_activation <= @order.subtotal
+          @vouchers << v
+        end
+      end
+    end
+    @vouchers = @vouchers.uniq
     # @stock = @order_item.product.stock
     # @order_item.product.update_attributes(:stock => @stock + 1)
   end
