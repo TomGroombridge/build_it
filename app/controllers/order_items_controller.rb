@@ -18,9 +18,9 @@ class OrderItemsController < ApplicationController
     @vouchers = []
     vouchers.each do |v|
       @order_items.each do |item|
-        if item.product.category == v.category && v.price_of_activation <= @order.subtotal
+        if v.category == nil && v.price_of_activation <= @order.subtotal
           @vouchers << v
-        elsif v.category.nil? && v.price_of_activation <= @order.subtotal
+        elsif item.product.category.include?("footwear") && (v.price_of_activation <= @order.subtotal)
           @vouchers << v
         end
       end
@@ -37,9 +37,9 @@ class OrderItemsController < ApplicationController
     @vouchers = []
     vouchers.each do |v|
       @order_items.each do |item|
-        if item.product.category == v.category && v.price_of_activation <= @order.subtotal
+        if v.category == nil && v.price_of_activation <= @order.subtotal
           @vouchers << v
-        elsif v.category.nil? && v.price_of_activation <= @order.subtotal
+        elsif item.product.category.include?("footwear") && (v.price_of_activation <= @order.subtotal)
           @vouchers << v
         end
       end
