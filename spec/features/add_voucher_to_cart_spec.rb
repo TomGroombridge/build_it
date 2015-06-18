@@ -5,6 +5,7 @@ describe 'adding a voucher' do
   before(:all) do
     create(:product)
     create(:voucher)
+    @voucher = FactoryGirl.create(:voucher, price_of_activation: 50.00, :price => 10.00)
   end
 
   it 'should be able to add a voucher code to a order of $10', :js => true do
@@ -14,6 +15,19 @@ describe 'adding a voucher' do
     select "$5.00", :from => "order_voucher_id"
     click_button("add-voucher")
     expect(page).to have_content '$5.50'
+  end
+
+  it 'should be able to add a voucher code to a order of $50', :js => true do
+    visit '/products'
+    click_button("product-1")
+    click_button("product-1")
+    click_button("product-1")
+    click_button("product-1")
+    click_button("product-1")
+    click_link("helllo")
+    select "$10.00", :from => "order_voucher_id"
+    click_button("add-voucher")
+    expect(page).to have_content '$42.50'
   end
 
 end
