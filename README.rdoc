@@ -33,41 +33,8 @@ Getting Started
 	bundle install
 	rake db:migrate
 	rake db:seed
-	rails s
-# Assuming Rbenv
-# @$rbenv install `cat .ruby-version`@
-# @$gem install bundler
-# @$bundle@
-# @$rake db:setup@
-# TODO @$rake test@
-# Start server with @$bin/rails s@
+	rails server
 
-h2. Deploy
+To Run Tests
 
-The site is hosted on "Heroku":rmonline.herokuapp.com
-
-TODO: (Pushing to the Github remote will trigger CI from "Codeship.io":https://www.codeship.io/projects/XXXXX and a deployment to Heroku.)
-
-Runtime config:
-
-@$heroku config@
-
-* SOME_ENV
-
-h2. Tests
-
-TODO
-
-Run the acceptance tests before you check in
-
-# Start server with @$RAILS_ENV=test grunt@
-# @$cucumber features@
-
-h2. Relish
-
-Sign off your story by documenting the acceptance tests in Cukes. Once you're happy and you pushed the story to staging:
-
- @$relish push courseiam@
-
-This pushes the feature files up to our "relish account":https://www.relishapp.com/msp/rm-online/docs.
-
+	rake spec (please be patient with this, if they fail the first time execute command again, not sure why this happens.)
