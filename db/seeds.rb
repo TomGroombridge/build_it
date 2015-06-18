@@ -13,3 +13,7 @@ Product.create!([
   {name: "Bird Print Dress, Black", price: 270.0, stock: 10, category: "womens_formalwear", avatar_file_name: "img-thing_(1).jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 18492, avatar_updated_at: "2015-06-18 01:27:54"},
   {name: "Mid Twist Cut-Out Dress, Pink", price: 540.0, stock: 5, category: "womens_formalwear", avatar_file_name: "125654260.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 11230, avatar_updated_at: "2015-06-18 01:29:08"}
 ])
+Voucher.create!([
+  {price: "5.0", price_of_activation: "10.0"},
+  {price: "10.0", price_of_activation: "50.0"}
+])
