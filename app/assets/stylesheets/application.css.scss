@@ -60,18 +60,22 @@
   @media (min-width: 1525px) and (max-width : 1740px ){
     width: 1525px;
   }
-  @media (min-width: 1213px) and (max-width : 1525px ){
-    width: 1245px;
+  @media (min-width: 1245px) and (max-width : 1525px ){
+    width: 1200px;
   }
-  @media (min-width:910px) and (max-width : 1213px ) {
-    width: 996px;
+  @media (min-width:997px) and (max-width : 1245px ) {
+    width: 898px;
   }
-  @media (min-width:604px) and (max-width : 910px ) {
-    width: 747px;
+  @media (min-width:596px) and (max-width : 996px ) {
+    width: 633px;
   }
-  @media (min-width:498px) and (max-width : 768px ) {
-    width: 498px;
+  @media (min-width:498px) and (max-width : 596px ) {
+    width: 629px;
   }
+  @media (max-width: 498px){
+    width: 298px;
+  }
+
   .element-item.transition.card {
     max-width: 285px;
   }
