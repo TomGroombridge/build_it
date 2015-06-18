@@ -1,4 +1,5 @@
 class OrderItemsController < ApplicationController
+  before_action :find_order_item, :except => [:create]
 
 	def create
     @order = current_order
@@ -8,20 +9,11 @@ class OrderItemsController < ApplicationController
     @product.update_attributes(stock: (@product.stock - 1))
     @products = Product.all
     session[:order_id] = @order.id
-    respond_to do |format|
-      format.html {
-         render :action => "create"
-      }
-      format.js {}
-    end
   end
 
   def update
-    @order = current_order
-    @order_item = @order.order_items.find(params[:id])
     @order_item.update_attributes(order_item_params)
-    @product = @order_item.product
-    @product.update_attributes(stock: (@product.stock - @order_item.quantity))
+    @order_item.productupdate_attributes(stock: (@order_item.product.stock - @order_item.quantity))
     @order_items = @order.order_items
     vouchers = Voucher.all
     @vouchers = []
@@ -38,8 +30,6 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    @order = current_order
-    @order_item = @order.order_items.find(params[:id])
     @order_item.product.update_attributes(:stock => (@order_item.product.stock + @order_item.quantity))
     @order_item.destroy
     @order_items = @order.order_items
@@ -62,6 +52,11 @@ class OrderItemsController < ApplicationController
 
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id)
+  end
+
+  def find_order_item
+    @order = current_order
+    @order_item = @order.order_items.find(params[:id])
   end
 
 end
