@@ -22,15 +22,16 @@ Features
 	A User can view the overall price of cart with coucher applied.
 
 
-Development stack
+Development Stack
 
-	Ruby
-	Javascript
+	RUBY
+	JAVASCRIPT
 	CSS
 	HTML
-	DATABASE: Postgres
-	CSS Framework: Semantic UI
-	View Templates: ERB
+	DATABASE: POSTGRES
+	CSS FRAMEWORK: SEMANTIC UI
+	VIEW TEMPLATES: ERB
+	ISOPTOPES
 	CAPYBARA
 	RSPEC
 	FACTORYGIRL
