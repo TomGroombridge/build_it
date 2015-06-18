@@ -21,7 +21,7 @@ Features
  	A User can add a voucher to the cart if relative.
 	A User can view the overall price of cart with coucher applied.
 
-
+There are also discount vouchers available as follows $5.00 off your order when you spend $10.00, $10.00 off when you spend over $50.00 and $15.00 off when you spend over $75.00 and bought atleast one pair of footwear.
 Development Stack
 
 	RUBY

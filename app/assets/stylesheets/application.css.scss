@@ -4,10 +4,23 @@
 */
 @import "semantic-ui";
 
+
+
 .column.buttons{
   .button{
     width: 100%;
     min-height: 50px;
+    @media only screen and (max-width: 498px) {
+      width: 14.25%;
+    }
+  }
+}
+
+.ui.stackable.grid > .column:not(.row) {
+  @media only screen and (max-width: 498px) {
+    display: inline-block !important;
+
+    width: 14.25% !important;
   }
 }
 
