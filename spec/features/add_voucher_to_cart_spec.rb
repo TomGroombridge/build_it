@@ -11,9 +11,9 @@ describe 'adding a voucher' do
     visit '/products'
     click_button("product-1")
     click_link("helllo")
-    # find("option[value='1']").click
     select "$5.00", :from => "order_voucher_id"
-    expect(page).to have_content 'Nothing in Cart'
+    click_button("add-voucher")
+    expect(page).to have_content '$5.50'
   end
 
 end

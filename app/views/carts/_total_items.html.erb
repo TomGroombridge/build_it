@@ -3,14 +3,14 @@
 <% else %>
   <div class="cart-items">
     <div class="header" style="display:block">
-      <h3>Your total is <%= @order.total %></h3>
+      <h3>Your total is <%= number_to_currency @order.total %></h3>
       <h1 class="title">Here's What You're Getting!</h1>
       <h1 class="continue-shopping" >Want some shirts? <span style="font-weight:bold">Continue Shopping</span></h1>
       <%= form_for @order, remote: true do |f| %>
         <% unless @vouchers.nil? || @vouchers.count == 0 %>
           <p>you have a voucher code available, please select to use it</p>
           <%= f.select :voucher_id, options_for_select(@vouchers.map{ |c| [(number_to_currency c.price), c.id] }) %>
-          <%= f.submit %>
+          <%= f.submit 'Add Voucher' , :id => "add-voucher" %>
         <% end %>
       <% end %>
     </div>
