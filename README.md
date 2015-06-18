@@ -2,7 +2,7 @@ Clothes Retailer
 
 A resposive 2 page website created for a clothing company which allows them to add products to a shopping cart, add vouchers (when necessary), edit the shopping cart and  filter through categories.
 
-![alt tag](https://raw.github.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://github.com/TomGroombridge/build_it/blob/master/app/assets/images/cart_page.png)
 
 Features
 
