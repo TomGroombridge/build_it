@@ -10,7 +10,6 @@ describe 'removing a product' do
     visit '/products'
     click_button("product-1")
     click_link("helllo")
-    expect(page).to have_content 'Red Shoes'
     within ".order-items" do
       click_link("Remove", :match => :first)
     end
@@ -28,5 +27,7 @@ describe 'removing a product' do
     end
     expect(page).to have_content '$10.50'
   end
+
+
 
 end
