@@ -46,3 +46,33 @@
     float: right;
   }
 }
+
+.ui.special.cards.isotope{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  min-height: 400px;
+  @media (min-width: 1800px){
+    width: 1800px;
+  }
+  @media (min-width: 1740px) and (max-width : 1800px ){
+    width: 1495px;
+  }
+  @media (min-width: 1525px) and (max-width : 1740px ){
+    width: 1525px;
+  }
+  @media (min-width: 1213px) and (max-width : 1525px ){
+    width: 1245px;
+  }
+  @media (min-width:910px) and (max-width : 1213px ) {
+    width: 996px;
+  }
+  @media (min-width:604px) and (max-width : 910px ) {
+    width: 747px;
+  }
+  @media (min-width:498px) and (max-width : 768px ) {
+    width: 498px;
+  }
+  .element-item.transition.card {
+    max-width: 285px;
+  }
+}

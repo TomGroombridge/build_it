@@ -5,7 +5,7 @@
     <div class="header" style="display:block">
       <h3>Your total is <%= number_to_currency @order.total %></h3>
       <h1 class="title">Here's What You're Getting!</h1>
-      <h1 class="continue-shopping" >Want some shirts? <span style="font-weight:bold">Continue Shopping</span></h1>
+      <h1 class="continue-shopping" >Want some shirts? <span style="font-weight:bold"><a href="/products">Continue Shopping</a></span></h1>
       <%= form_for @order, remote: true do |f| %>
         <% unless @vouchers.nil? || @vouchers.count == 0 %>
           <p>you have a voucher code available, please select to use it</p>
