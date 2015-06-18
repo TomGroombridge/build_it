@@ -1,3 +1,6 @@
+Order.create!([
+  {total: nil, subtotal: "194.0", voucher_id: 3}
+])
 Product.create!([
   {name: "Almond Toe Court Shoes, Patent Black", price: 99.0, stock: 5, category: "womens_footwear", avatar_file_name: "womenshoe.jpeg", avatar_content_type: "image/jpeg", avatar_file_size: 16646, avatar_updated_at: "2015-06-18 01:10:29"},
   {name: "Suede Shoes, Blue", price: 42.0, stock: 4, category: "womens_footwear", avatar_file_name: "blue-suede-shoes-women-m4esnvyc.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 13593, avatar_updated_at: "2015-06-18 01:11:34"},
@@ -14,6 +17,7 @@ Product.create!([
   {name: "Mid Twist Cut-Out Dress, Pink", price: 540.0, stock: 5, category: "womens_formalwear", avatar_file_name: "125654260.jpg", avatar_content_type: "image/jpeg", avatar_file_size: 11230, avatar_updated_at: "2015-06-18 01:29:08"}
 ])
 Voucher.create!([
-  {price: "5.0", price_of_activation: "10.0"},
-  {price: "10.0", price_of_activation: "50.0"}
+  {price: "5.0", price_of_activation: "10.0", category: nil},
+  {price: "10.0", price_of_activation: "50.0", category: nil},
+  {price: "15.0", price_of_activation: "75.0", category: "footwear"}
 ])
