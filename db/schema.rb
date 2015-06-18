@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617120430) do
+ActiveRecord::Schema.define(version: 20150618075146) do
 
   create_table "order_items", force: true do |t|
     t.integer  "product_id"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150617120430) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "price_of_activation"
+    t.string   "category"
   end
 
 end
