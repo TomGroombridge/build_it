@@ -38,9 +38,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
-    @product = @order_item.product
-    @quantity = @order_item.quantity
-    @product.update_attributes(:stock => (@product.stock + @quantity))
+    @order_item.product.update_attributes(:stock => (@order_item.product.stock + @order_item.quantity))
     @order_item.destroy
     @order_items = @order.order_items
     vouchers = Voucher.all
@@ -55,7 +53,6 @@ class OrderItemsController < ApplicationController
       end
     end
     @vouchers = @vouchers.uniq
-
   end
 
 
