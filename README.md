@@ -7,6 +7,7 @@ Below is the product index where you can filter through the categrories and add 
 ![alt tag](https://github.com/TomGroombridge/build_it/blob/master/app/assets/images/products_page.png)
 
 Below is the cart where you can update quantities, remove products and add voucher codes (if applicable).
+
 ![alt tag](https://github.com/TomGroombridge/build_it/blob/master/app/assets/images/cart_page.png)
 
 
@@ -27,7 +28,7 @@ Development stack
 	Javascript
 	CSS
 	HTML
-	Databse: Postgres
+	DATABASE: Postgres
 	CSS Framework: Semantic UI
 	View Templates: ERB
 	CAPYBARA
