@@ -67,8 +67,11 @@
 		  <div class="extra content">
 	      <a class="left-item">
 	        <i class="users icon stock"></i>
-	        <%= product.stock %> in stock
-          hello world
+          <% if product.stock == 0 %>
+            out of stock
+          <% else %>
+            <%= product.stock %> in stock
+          <% end %>
 	      </a>
         <%= form_for @order_item, remote: true do |f| %>
           <%= f.hidden_field :quantity, value: 1, min: 1 %>
@@ -76,7 +79,6 @@
           <% if product.stock == 0 %>
             <p>no stock!</p>
           <% else %>
-            <%= product.id %>
             <a><%= f.submit "Add to Cart", :class => "ui button", :id => "product-#{product.id}" %></a>
           <% end %>
         <% end %>
