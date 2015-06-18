@@ -1,28 +1,63 @@
-== README
+h1.Clothes Retailer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A resposive 2 page website created for a clothing company which allows them to add products to a shopping cart, add vouchers (when necessary), edit the shopping cart and  filter through categories.
 
-Things you may want to cover:
+h2. Features
 
-* Ruby version
+* Framework: Ruby On Rails
+* Database: Postgres
+* View Templates: ERB
+* Stylesheets: SASS
+* CSS Framework: Semantic UI
+* Testing Framework: TODO
+* Build system: TODO
 
-* System dependencies
+h2. Development stack
 
-* Configuration
+* Framework: Ruby On Rails
+* Database: Postgres
+* View Templates: ERB
+* Stylesheets: SASS
+* CSS Framework: Semantic UI
+* Testing Framework: TODO
+* Build system: TODO
 
-* Database creation
+h2. Getting Started
 
-* Database initialization
+# Assuming Rbenv
+# @$rbenv install `cat .ruby-version`@
+# @$gem install bundler
+# @$bundle@
+# @$rake db:setup@
+# TODO @$rake test@
+# Start server with @$bin/rails s@
 
-* How to run the test suite
+h2. Deploy
 
-* Services (job queues, cache servers, search engines, etc.)
+The site is hosted on "Heroku":rmonline.herokuapp.com
 
-* Deployment instructions
+TODO: (Pushing to the Github remote will trigger CI from "Codeship.io":https://www.codeship.io/projects/XXXXX and a deployment to Heroku.)
 
-* ...
+Runtime config:
 
+@$heroku config@
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* SOME_ENV
+
+h2. Tests
+
+TODO
+
+Run the acceptance tests before you check in
+
+# Start server with @$RAILS_ENV=test grunt@
+# @$cucumber features@
+
+h2. Relish
+
+Sign off your story by documenting the acceptance tests in Cukes. Once you're happy and you pushed the story to staging:
+
+ @$relish push courseiam@
+
+This pushes the feature files up to our "relish account":https://www.relishapp.com/msp/rm-online/docs.
+
