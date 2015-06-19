@@ -5,16 +5,7 @@
   	      <div class="ui dimmer">
   	        <div class="content">
   	          <div class="center">
-    						<%= form_for @order_item, remote: true do |f| %>
-  			          <%= f.hidden_field :quantity, value: 1, min: 1 %>
-  							  <%= f.hidden_field :product_id, value: product.id %>
-                  <% if product.stock == 0 %>
-                    <p>no stock!</p>
-                  <% else %>
-                    <p class="testing321"><%= product.stock %> in stock</p>
-  		              <%= f.submit "Add to Cart", :class => "ui inverted button" %>
-                  <% end %>
-  							<% end %>
+                <p><%= product.category %></p>
   		        </div>
   		      </div>
   		    </div>
