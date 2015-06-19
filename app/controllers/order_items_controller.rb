@@ -13,7 +13,7 @@ class OrderItemsController < ApplicationController
 
   def update
     @order_item.update_attributes(order_item_params)
-    @order_item.productupdate_attributes(stock: (@order_item.product.stock - @order_item.quantity))
+    @order_item.product.update_attributes(stock: (@order_item.product.stock - @order_item.quantity))
     @order_items = @order.order_items
     vouchers = Voucher.all
     @vouchers = []
