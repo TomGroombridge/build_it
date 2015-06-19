@@ -27,8 +27,8 @@
   		    </div>
   		  </div>
   		  <div class="extra content">
-          <div class="product_index">
-            <%= render partial: "stock_content", locals: { product: product } %>
+          <div class="product_index-<%= product.id %>">
+            <%= render partial: "stock_content", locals: { builder: product } %>
           </div>
           <%= form_for @order_item, :html => { :style => 'display:inline-block; float:right' }, remote: true do |f| %>
             <%= f.hidden_field :quantity, value: 1, min: 1 %>

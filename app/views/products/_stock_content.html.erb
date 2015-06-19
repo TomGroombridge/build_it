@@ -1,0 +1,8 @@
+<a class="left-item">
+  <i class="users icon stock"></i>
+  <% if builder.stock == 0 %>
+    out of stock
+  <% else %>
+    <%= builder.stock %> in stock
+  <% end %>
+</a>

@@ -7,8 +7,11 @@ class OrderItemsController < ApplicationController
     @order.save
     @product = @order_item.product
     @product.update_attributes(stock: (@product.stock - 1))
-    @products = Product.all
     session[:order_id] = @order.id
+    @products = Product.all
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update

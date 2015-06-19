@@ -1,8 +1,6 @@
-
-	<% if @order.errors.any? || @order_item.errors.any? %>
-		raise error
-	<% else %>
-	  $(".order-text").html("<%= escape_javascript(render 'layouts/order_total') %>")
-	  $(".product_index").html("<%= escape_javascript(render 'products/all_products') %>")
-	  window.location.reload();
-	<% end %>
+<% if @order.errors.any? || @order_item.errors.any? %>
+	raise error
+<% else %>
+  $(".order-text").html("<%= escape_javascript(render 'layouts/order_total') %>")
+  $(".product_index-<%= @order_item.product.id %>").html("<%= escape_javascript(render 'products/stock_content', builder: @product) %>")
+<% end %>
