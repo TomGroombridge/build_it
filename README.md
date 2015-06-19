@@ -47,4 +47,4 @@ Getting Started
 
 To Run Tests
 
-	rake spec (please be patient with this, if they fail the first time execute command again, not sure why this happens.)
+	rake spec (please be patient with this, if they fail the first time execute command again, not sure why this happens, once they all pass they always pass so not sure what the issue is here.)
